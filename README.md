@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/Tunerly.svg" width="96" height="96" alt="Tunerly Logo" />
+</p>
+
 # Tunerly Landing Page
 
 A beautiful, high-fidelity, distraction-free landing page for Tunerly—the sub-cent accurate, subscription-free, and offline-first instrument tuner. Designed for stage and studio, optimized for OLED displays, and built using premium web patterns.
