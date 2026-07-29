@@ -1,43 +1,77 @@
-# Astro Starter Kit: Minimal
+# Tunerly Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A beautiful, high-fidelity, distraction-free landing page for Tunerly—the sub-cent accurate, subscription-free, and offline-first instrument tuner. Designed for stage and studio, optimized for OLED displays, and built using premium web patterns.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## Tech Stack & Architecture
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Framework**: [Astro](https://astro.build) (for static rendering and head/SEO management)
+- **UI Components**: [React](https://react.dev) (for interactive tuner simulation)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Iconography**: [Lucide React](https://lucide.dev)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **Audio Synthesis**: Web Audio API (for reference pitch output)
+
+---
+
+## Directory Structure
 
 ```text
-/
-├── public/
+tunerly-website/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/            # Modular React components
+│   │   ├── Header.tsx         # Site navigation & Brand logo
+│   │   ├── Hero.tsx           # Intro headers and call-to-actions
+│   │   ├── TunerDemo.tsx      # Interactive simulated pitch tuner & tone generator
+│   │   ├── Philosophy.tsx     # Value pillars and comparison cards
+│   │   ├── Features.tsx       # Core feature grids
+│   │   ├── Performance.tsx    # Audio engine visualizer & FFT simulation
+│   │   ├── Comparison.tsx     # Comparison checklist table
+│   │   ├── FAQ.tsx            # Frequently Asked Questions Accordion
+│   │   └── Download.tsx       # Download CTA section
+│   │   └── Footer.tsx         # Legal footer & copyright links
+│   ├── data/
+│   │   └── tunerlyData.ts     # Configuration presets, FAQs, and JSON-LD schema
+│   ├── pages/
+│   │   └── index.astro        # Base entrypoint with SEO metadata & scripts
+│   └── styles/
+│       └── global.css         # Tailwind base styling setup
+├── package.json
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## SEO & Schema Implementation
 
-Any static assets, like images, can be placed in the `public/` directory.
+All SEO settings are located statically in the `<head>` of [index.astro](src/pages/index.astro) to ensure fast indexing:
+- **Title and Meta tags**: Statically injected for maximum crawl efficiency.
+- **OpenGraph & Twitter Cards**: Formatted for preview sharing.
+- **JSON-LD Schema**: Implements `SoftwareApplication` and `FAQPage` graphs dynamically loaded for search engines.
+- **App Icons & Manifests**: Pre-configured with Apple touch icons, Android launcher properties, and standard favicons.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Development
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+To install dependencies and start the dev server locally:
 
-## 👀 Want to learn more?
+```bash
+# Install dependencies
+npm install
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Start the dev server in the background
+astro dev --background
+
+# Build production bundle
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+### Background Server Management
+- View status: `astro dev status`
+- View console logs: `astro dev logs`
+- Stop the server: `astro dev stop`
