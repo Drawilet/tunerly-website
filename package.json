@@ -17,6 +17,7 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^7.1.5",
     "framer-motion": "^12.43.0",
+    "lucide-react": "^1.27.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   }
