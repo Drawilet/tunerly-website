@@ -1,17 +1,152 @@
 ---
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import TunerDemo from "../components/TunerDemo";
+import Philosophy from "../components/Philosophy";
+import Features from "../components/Features";
+import Performance from "../components/Performance";
+import Comparison from "../components/Comparison";
+import FAQ from "../components/FAQ";
+import Download from "../components/Download";
+import Footer from "../components/Footer";
 
+import { jsonLdData } from "../data/tunerlyData";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- App Favicons & Manifest -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link class="favicon-icon" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link class="favicon-icon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link class="favicon-icon" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- SEO & Metadata -->
+    <title>Tunerly — The Simple Tuner. Free Guitar & Instrument Tuner</title>
+    <meta name="description" content="Tunerly is a minimal, sub-cent accurate instrument tuner. No subscriptions, zero ads, 100% offline pitch detection for guitar, bass, ukulele, and violin." />
+    <meta property="og:title" content="Tunerly — The Simple Tuner" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tunerly.app" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+  </head>
+  <body class="min-h-screen bg-black text-white font-sans antialiased selection:bg-[#0A84FF]/30 selection:text-white relative overflow-x-hidden">
+    <Header client:load />
+    
+    <main>
+      <Hero client:load />
+      <TunerDemo client:load />
+
+      {/* Mid-Page Key Core Features Ribbon */}
+      <section class="border-y border-white/10 bg-neutral-950/60 py-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#0A84FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Sub-10ms Speed</h3>
+              <p class="text-xs text-neutral-400">Instant pitch locking</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#0A84FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">No Subscriptions</h3>
+              <p class="text-xs text-neutral-400">Free forever. No traps.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#0A84FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Multi-Instrument</h3>
+              <p class="text-xs text-neutral-400">Guitar, Bass, Uke, Violin</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#0A84FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">100% Offline</h3>
+              <p class="text-xs text-neutral-400">No ads or tracking</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Philosophy client:load />
+      <Features client:load />
+      <Performance client:load />
+      <Comparison client:load />
+      
+      {/* Manifesto Quote Section */}
+      <section class="py-24 sm:py-32 px-4 sm:px-6 bg-neutral-950 border-y border-white/10 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+          <p class="text-2xl sm:text-4xl lg:text-5xl font-serif italic text-white leading-tight">
+            “Music deserves your attention.
+            <br />
+            Not subscription popups.”
+          </p>
+          <div class="w-12 h-0.5 bg-[#0A84FF] mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm font-mono text-neutral-500 uppercase tracking-widest">
+            THE TUNERLY MANIFESTO
+          </p>
+        </div>
+      </section>
+
+      <FAQ client:load />
+      <Download client:load />
+    </main>
+
+    <Footer client:load />
+  </body>
 </html>
