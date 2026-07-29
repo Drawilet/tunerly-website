@@ -36,7 +36,7 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mt-6 text-lg sm:text-2xl text-neutral-400 max-w-2xl font-normal leading-relaxed"
       >
-        Everything you need to tune your instrument. Nothing you don’t.
+        Tunerly is currently being prepared for release on iPhone and Android. In the meantime, you can try the web experience today.
       </motion.p>
 
       {/* Hero CTA Buttons */}
@@ -44,23 +44,58 @@ export default function Hero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+        className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto"
       >
-        <a
-          href="#download"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A84FF] hover:bg-[#0071E3] text-white font-medium text-base px-8 py-3.5 rounded-full transition-all shadow-[0_0_30px_rgba(10,132,255,0.35)] hover:shadow-[0_0_40px_rgba(10,132,255,0.55)]"
-        >
-          <Download className="w-5 h-5" />
-          <span>Download Free</span>
-        </a>
+        {/* Primary CTA (Disabled/Coming Soon) */}
+        <div className="relative w-full sm:w-auto">
+          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A84FF]/10 text-[#0A84FF] text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#0A84FF]/20 backdrop-blur-sm z-10 whitespace-nowrap">
+            Available Soon
+          </span>
+          <button
+            disabled
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-900 border border-white/10 text-neutral-400 font-medium text-base px-8 py-3.5 rounded-full cursor-not-allowed transition-all opacity-70"
+          >
+            <span>Coming Soon</span>
+          </button>
+        </div>
 
+        {/* Secondary CTA (Live Demo) */}
         <a
-          href="#demo"
+          href="https://web.tunerly.app"
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-900/80 hover:bg-neutral-800 border border-white/10 text-white font-medium text-base px-7 py-3.5 rounded-full backdrop-blur-md transition-all"
         >
-          <span>Try Interactive Demo</span>
+          <span>Live Demo</span>
           <ArrowRight className="w-4 h-4 text-neutral-400" />
         </a>
+      </motion.div>
+
+      {/* Centerpiece Mockup Image */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-16 sm:mt-24 w-full max-w-xs sm:max-w-sm mx-auto px-4"
+      >
+        <motion.div
+          animate={{
+            y: [0, -12, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+        >
+          <img
+            src="/assets/preview.png"
+            alt="Tunerly App Preview"
+            className="w-full h-auto object-cover"
+            loading="eager"
+          />
+        </motion.div>
       </motion.div>
     </section>
   );

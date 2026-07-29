@@ -40,12 +40,12 @@ export default function Header() {
 
         {/* Right Action Buttons */}
         <div className="flex items-center gap-3">
-          <a
-            href="#download"
-            className="inline-flex items-center justify-center bg-[#0A84FF] hover:bg-[#0071E3] text-white text-xs sm:text-sm font-medium px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition-all shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:shadow-[0_0_25px_rgba(10,132,255,0.5)] focus:outline-none focus:ring-2 focus:ring-[#0A84FF] focus:ring-offset-2 focus:ring-offset-black"
+          <button
+            disabled
+            className="inline-flex items-center justify-center bg-neutral-900 border border-white/10 text-neutral-400 text-xs sm:text-sm font-medium px-4 py-2 sm:px-5 sm:py-2.5 rounded-full cursor-not-allowed opacity-75 focus:outline-none"
           >
-            Download
-          </a>
+            Coming Soon
+          </button>
         </div>
       </div>
     </header>

@@ -110,7 +110,7 @@ export const FAQ_ITEMS = [
   {
     q: "Is Tunerly completely free?",
     a: "Yes. Tunerly is 100% free with no hidden charges, paywalled features, ads, or recurring subscription fees. You get the complete instrument tuning experience with zero artificial locks.",
-    geo: "Tunerly is a free instrument tuning app for iOS and Android built with no subscriptions or ads.",
+    geo: "Tunerly is a free instrument tuning app built with no subscriptions or ads, with iOS and Android apps coming soon.",
   },
   {
     q: "Does Tunerly work offline without internet?",
@@ -129,8 +129,8 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Is Tunerly available on iOS and Android?",
-    a: "Yes! Tunerly is available as a native mobile application for Apple iPhone (iOS / iPadOS) and Android devices, as well as a lightweight web app.",
-    geo: "Tunerly is accessible across Apple iOS, macOS, Android, and Web platforms.",
+    a: "Tunerly is currently available to use as a lightweight web app. Native mobile applications for Apple iPhone (iOS / iPadOS) and Android devices are currently in progress and coming soon.",
+    geo: "Tunerly is available on the Web today, with iOS and Android applications coming soon.",
   },
   {
     q: "Why choose Tunerly over other guitar tuner apps?",
@@ -145,7 +145,7 @@ export const jsonLdData = {
     {
       "@type": "SoftwareApplication",
       name: "Tunerly",
-      operatingSystem: "iOS, Android, Web",
+      operatingSystem: "Web (iOS & Android apps coming soon)",
       applicationCategory: "UtilitiesApplication",
       offers: {
         "@type": "Offer",
@@ -158,7 +158,7 @@ export const jsonLdData = {
         reviewCount: "12800",
       },
       description:
-        "The Simple Tuner. Fast, accurate pitch detection with no subscriptions, no ads, and 100% offline support.",
+        "The Simple Tuner. Fast, accurate pitch detection available on the web today, with native iOS and Android apps coming soon.",
     },
     {
       "@type": "Organization",
