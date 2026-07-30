@@ -27,9 +27,9 @@ export default function Performance() {
                 1
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-white">
+                <h3 className="text-sm font-semibold text-white">
                   Sub-10ms Latency
-                </h4>
+                </h3>
                 <p className="text-xs text-neutral-400">
                   Zero lag between pluck and visual pitch feedback.
                 </p>
@@ -41,9 +41,9 @@ export default function Performance() {
                 2
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-white">
+                <h3 className="text-sm font-semibold text-white">
                   Overtone Suppression
-                </h4>
+                </h3>
                 <p className="text-xs text-neutral-400">
                   Ignores natural octave resonance on acoustic instruments.
                 </p>
@@ -55,9 +55,9 @@ export default function Performance() {
                 3
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-white">
+                <h3 className="text-sm font-semibold text-white">
                   Stage-Ready Visualizer
-                </h4>
+                </h3>
                 <p className="text-xs text-neutral-400">
                   High contrast needle visible under direct sunlight.
                 </p>
@@ -93,14 +93,16 @@ export default function Performance() {
               return (
                 <motion.div
                   key={i}
-                  animate={{ height: `${heightPercent}%` }}
+                  initial={{ scaleY: 0.15 }}
+                  animate={{ scaleY: heightPercent / 100 }}
                   transition={{
                     duration: 0.2,
                     repeat: Infinity,
                     repeatType: "reverse",
                     delay: i * 0.02,
                   }}
-                  className={`w-full rounded-t-sm ${
+                  style={{ originY: 1 }}
+                  className={`w-full h-full rounded-t-sm ${
                     i >= 12 && i <= 20
                       ? "bg-[#0A84FF] shadow-[0_0_10px_rgba(10,132,255,0.8)]"
                       : "bg-neutral-800"

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 rounded-lg bg-neutral-900 border border-white/20 flex items-center justify-center text-white">
-            <img src="/Tunerly.svg" alt="Tunerly Logo" />
+            <img src="/Tunerly.svg" alt="Tunerly Logo" width={24} height={24} />
           </div>
           <span className="font-semibold text-white text-sm">Tunerly</span>
           <span className="text-neutral-600">|</span>

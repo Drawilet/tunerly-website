@@ -12,7 +12,7 @@ export default function Header() {
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-neutral-900 border border-white/20 flex items-center justify-center relative overflow-hidden group-hover:border-[#0A84FF]/50 transition-colors">
             <div className="absolute inset-0 bg-linear-to-tr from-[#0A84FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-            <img src="/Tunerly.svg" alt="Tunerly Logo" />
+            <img src="/Tunerly.svg" alt="Tunerly Logo" width={36} height={36} />
           </div>
           <span className="font-semibold text-lg sm:text-xl tracking-tight text-white group-hover:text-white/90">
             Tunerly

@@ -1,8 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-export default function Hero() {
+interface HeroProps {
+  previewMobileSrc?: string;
+  previewDesktopSrc?: string;
+}
+
+export default function Hero({ previewMobileSrc, previewDesktopSrc }: HeroProps) {
+  const mobileSrc = previewMobileSrc || "/assets/preview.webp";
+  const desktopSrc = previewDesktopSrc || "/assets/preview.webp";
+  const srcSet = `${mobileSrc} 384w, ${desktopSrc} 844w`;
+
   return (
     <section className="relative pt-32 sm:pt-44 pb-20 sm:pb-32 px-4 sm:px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
       {/* Subtle Ambient Radial Backlight Glow */}
@@ -48,7 +57,7 @@ export default function Hero() {
       >
         {/* Primary CTA (Disabled/Coming Soon) */}
         <div className="relative w-full sm:w-auto">
-          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A84FF]/10 text-[#0A84FF] text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#0A84FF]/20 backdrop-blur-sm z-10 whitespace-nowrap">
+          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A84FF]/10 text-[#389FFF] text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#0A84FF]/20 backdrop-blur-sm z-10 whitespace-nowrap">
             Available Soon
           </span>
           <button
@@ -87,13 +96,19 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] aspect-[844/1702] w-full"
         >
           <img
-            src="/assets/preview.webp"
+            src={desktopSrc}
+            srcSet={srcSet}
+            sizes="(max-width: 640px) 288px, 352px"
             alt="Tunerly App Preview"
-            className="w-full h-auto object-cover"
+            width={844}
+            height={1702}
+            className="w-full h-auto object-cover aspect-[844/1702]"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </motion.div>
       </motion.div>

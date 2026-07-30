@@ -12,6 +12,13 @@ import Footer from "../components/Footer";
 
 import { jsonLdData } from "../data/tunerlyData";
 import "../styles/global.css";
+
+// Astro Image Optimization for the LCP Centerpiece image
+import { getImage } from "astro:assets";
+import previewImage from "../assets/preview.webp";
+
+const optimizedMobile = await getImage({ src: previewImage, width: 384, format: 'webp' });
+const optimizedDesktop = await getImage({ src: previewImage, width: 844, format: 'webp' });
 ---
 
 <html lang="en">
@@ -49,13 +56,8 @@ import "../styles/global.css";
     <meta property="og:url" content="https://tunerly.app" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- JSON-LD Structured Data Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
@@ -64,7 +66,11 @@ import "../styles/global.css";
     <Header client:load />
     
     <main>
-      <Hero client:load />
+      <Hero 
+        client:load 
+        previewMobileSrc={optimizedMobile.src}
+        previewDesktopSrc={optimizedDesktop.src}
+      />
 
 
       {/* Mid-Page Key Core Features Ribbon */}
@@ -77,7 +83,7 @@ import "../styles/global.css";
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-white">Sub-10ms Speed</h3>
+              <h2 class="text-sm font-semibold text-white">Sub-10ms Speed</h2>
               <p class="text-xs text-neutral-400">Instant pitch locking</p>
             </div>
           </div>
@@ -89,7 +95,7 @@ import "../styles/global.css";
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-white">No Subscriptions</h3>
+              <h2 class="text-sm font-semibold text-white">No Subscriptions</h2>
               <p class="text-xs text-neutral-400">Free forever. No traps.</p>
             </div>
           </div>
@@ -103,7 +109,7 @@ import "../styles/global.css";
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-white">Multi-Instrument</h3>
+              <h2 class="text-sm font-semibold text-white">Multi-Instrument</h2>
               <p class="text-xs text-neutral-400">Guitar, Bass, Uke, Violin</p>
             </div>
           </div>
@@ -116,7 +122,7 @@ import "../styles/global.css";
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-white">100% Offline</h3>
+              <h2 class="text-sm font-semibold text-white">100% Offline</h2>
               <p class="text-xs text-neutral-400">No ads or tracking</p>
             </div>
           </div>
