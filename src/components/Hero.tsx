@@ -90,7 +90,7 @@ export default function Hero() {
           className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
         >
           <img
-            src="/assets/preview.png"
+            src="/assets/preview.webp"
             alt="Tunerly App Preview"
             className="w-full h-auto object-cover"
             loading="eager"
